@@ -13,5 +13,5 @@ RUN sudo apt-get update \
     && sudo apt-get install -y jq \
     && sudo rm -rf /var/lib/apt/lists/*
 
-RUN rustup update stable \
-   && rustup target add wasm32-unknown-unknown
+#RUN rustup update stable \
+#   && rustup target add wasm32-unknown-unknown
