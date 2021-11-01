@@ -14,6 +14,6 @@ RUN sudo apt-get update \
     && sudo rm -rf /var/lib/apt/lists/* 
 #    && ln -s -t /workspace/.cargo/ /home/gitpod/.cargo/bin bin
 
-RUN rustup update nightly 
+RUN rustup target add wasm32-unknown-unknown
 #   && rustup update stable \
 #   && rustup target add wasm32-unknown-unknown
