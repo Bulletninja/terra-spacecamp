@@ -11,7 +11,9 @@ COPY --from=wasmd /opt/* /opt/
 
 RUN sudo apt-get update \
     && sudo apt-get install -y jq \
-    && sudo rm -rf /var/lib/apt/lists/*
+    && sudo rm -rf /var/lib/apt/lists/* \
+    && ln -s -t /workspace/.cargo/ /home/gitpod/.cargo/bin bin
 
-#RUN rustup update stable \
-#   && rustup target add wasm32-unknown-unknown
+RUN rustup update nightly \
+   && rustup update stable \
+   && rustup target add wasm32-unknown-unknown
